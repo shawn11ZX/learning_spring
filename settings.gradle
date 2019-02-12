@@ -1,0 +1,5 @@
+rootProject.name = 'springcloud-test'
+include 'user'
+include 'sayhello'
+include 'gateway'
+
