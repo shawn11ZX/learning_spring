@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="exampleBean" class="springcoretest.dependency_resolve.ExampleBean">
+        <!-- constructor injection using the nested ref element -->
+        <constructor-arg>
+            <ref bean="anotherExampleBean"/>
+        </constructor-arg>
+
+        <!-- constructor injection using the neater ref attribute -->
+        <property name="i" value="2"/>
+    </bean>
+
+    <bean id="anotherExampleBean" class="springcoretest.dependency_resolve.AnotherBean">
+        <property name="id" value="1"></property>
+    </bean>
+
+
+</beans>
